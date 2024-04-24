@@ -4,7 +4,9 @@ import wrap from '@dazn/lambda-powertools-pattern-basic';
 import { Log, error } from './utils';
 import { experience, allExperiences } from './experience';
 import { dashboard } from './dashboard';
+
 const doNotWaitForEmptyEventLoop = require('@middy/do-not-wait-for-empty-event-loop');
+const hsts = require('hsts')
 
 interface Event {
   type: string;
@@ -40,4 +42,8 @@ module.exports.handler = wrap(async (event: Event) => {
   runOnBefore: true,
   runOnAfter: true,
   runOnError: true,
+})).use(hsts({
+  maxAge: 31536000,        
+  includeSubDomains: true, 
+  preload: true
 }));
