@@ -19,12 +19,14 @@
     "@middy/do-not-wait-for-empty-event-loop": "^1.5.2",
     "aws-sdk": "^2.832.0",
     "dotenv": "^8.2.0",
+    "helmet": "^7.1.0",
     "locutus": "^2.0.14",
     "pg": "^8.5.1",
     "redis": "^3.0.2",
     "serverless-plugin-aws-alerts": "^1.7.3"
   },
   "devDependencies": {
+    "@types/helmet": "^4.0.0",
     "@types/locutus": "0.0.6",
     "@types/redis": "^2.8.28",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
